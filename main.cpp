@@ -1,10 +1,13 @@
 #include <iostream>
 #include <SDL.h>
+#include <SDL2_LOVES_CMAKEConfig.hpp>
 
 const int SCREEN_WIDTH = 1280;
 const int SCREEN_HEIGHT = 720;
 
 int main(int argc, char* args[]) {
+    std::cout << "Version: " << SDL2_LOVES_CMAKE_VERSION_MAJOR << "." << SDL2_LOVES_CMAKE_VERSION_MINOR << std::endl;
+
     SDL_Window* window = nullptr;
     SDL_Surface* screenSurface = nullptr;
 

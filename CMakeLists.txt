@@ -1,11 +1,15 @@
 # Your desired CMake version. Please check currently installed with `cmake --version`
 cmake_minimum_required(VERSION 3.20.1)
-# Your project name 
-project(SDL2_LOVES_CMAKE)
+# Your project name and version
+project(SDL2_LOVES_CMAKE VERSION 1.1)
 # C++ standard project uses
 set(CMAKE_CXX_STANDARD 20)
+# Creates config file
+configure_file(SDL2_LOVES_CMAKEConfig.hpp.in SDL2_LOVES_CMAKEConfig.hpp)
 # Create executable
 add_executable(${PROJECT_NAME} main.cpp)
+# Include binary dir
+target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_BINARY_DIR})
 
 # Download submodules. This will automatically get all submodules
 find_package(Git QUIET)
